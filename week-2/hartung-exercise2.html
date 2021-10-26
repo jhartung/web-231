@@ -1,0 +1,37 @@
+<!--
+============================================
+; Title: Exercise 2.1
+; Author: Professor Krasso
+; Date: 26 October 2021
+; Modified By: Joel Hartung
+; Description: This exercise demonstrates adding JavaScript to an HTML page
+; Reference: "JavaScript - The innerHTML Property" by SkillSoft YouTube
+;   URL: https://www.youtube.com/watch?v=SFZXXUY_MHg&ab_channel=SkillsoftYouTube
+; Reference: w3schools.com JavaScript Alert Tryit Editor v3.7
+    URL: https://www.w3schools.com/js/tryit.asp?filename=tryjs_alert
+;===========================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>WEB 231 – Enterprise JavaScript I</title>
+        <link rel="stylesheet" type="text/css" href="../global.css">
+    </head>
+    <body>
+        <h1>Exercise 2.2 - Hello JavaScript</h1>
+        <button onclick="alertFunction()" id=btnMyCourse>What course am I taking?</button>
+        <script>
+        //This function activates the alert box
+        function alertFunction() {
+          alert("WEB 231 - Enterprise JavaScript I")
+        }
+        </script>
+        <p id="txtMyWorld">Example text</p>
+        <script>
+        //This script replaces the example text in the p tag
+          document.getElementById("txtMyWorld").innerHTML = 'You are now in Hartung\'s world!';
+        </script>
+        <a href="../index.html" class="return-home">Return</a>
+    </body>
+</html>
