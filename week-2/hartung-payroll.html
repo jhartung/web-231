@@ -1,0 +1,73 @@
+<!--
+============================================
+; Title: Assignment 2.3
+; Author: Professor Krasso
+; Date: 27 October 2021
+; Modified By: Joel Hartung
+; Description: 
+;===========================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>WEB 231 – Enterprise JavaScript I</title>
+        <link rel="stylesheet" type="text/css" href="../site.css">
+        <link rel="stylesheet" type="text/css" href="hartung-payroll.css">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1 id="payroll-header">Payroll System</h1>
+        <h3>Employee record 1</h3>
+        <ul>
+            <li id="txtFirstNameJohn"></li>
+            <li id="txtLastNameCarpenter">Carpenter</li>
+            <li id="txtAddressCarpenter">456 Shady Lane</li>
+            <li id="txtHireDateCarpenter">10/25/1978</li>
+            <li id="txtPayRateCarpenter">47.0</li>
+        </ul>
+        <h3>Employee record 2</h3>
+        <ul>
+            <li id="txtFirstNameWes">Test</li>
+            <li id="txtLastNameCraven">Craven</li>
+            <li id="txtAddressCraven">456 Elm Street</li>
+            <li id="txtHireDateCraven">11/16/1984</li>
+            <li id="txtPayRateCraven">57.0</li>
+        </ul>
+        <h3>Employee record 3</h3>
+        <ul>
+            <li id="txtFirstNameTobe">Tobe</li>
+            <li id="txtLastNameHooper">Hooper</li>
+            <li id="txtAddressHooper">456 Texas Drive</li>
+            <li id="txtHireDateHooper">10/1/1974</li>
+            <li id="txtPayRateHooper">30.9</li>
+        </ul>
+        <script>
+            // This script declares the variables
+            const txtFirstNameJohn = "John";
+            const txtFirstNameWes = "Wes";
+            const txtFirstNameTobe = "Tobe";
+            const txtLastNameCarpenter = "Carpenter";
+            const txtLastNameCraven = "Craven";
+            const txtLastNameHooper = "Hooper";
+            const txtAddressCarpenter = "456 Shady Lane";
+            const txtAddressCraven = "456 Elm Street";
+            const txtAddressHooper = "456 Texas Drive";
+            let txtHireDateCarpenter = "10/25/1978";
+            let txtHireDateCraven = "11/16/1984";
+            let txtHireDateHooper = "10/1/1974";
+            let txtPayRateCarpenter = "47.2798".toFixed(1);
+            let txtPayRateCraven = "57.7823".toFixed(1);
+            let txtPayRateHooper = "30.9121".toFixed(1);
+            // This script formats the hire date as a Date Object
+            new Date(txtHireDateCarpenter).toLocaleDateString("en-US");
+            new Date(txtHireDateCraven).toLocaleDateString("en-US");
+            new Date(txtHireDateHooper).toLocaleDateString("en-US");
+            // This script writes the data to the HTML
+            document.getElementById("txtFirstNameJohn").innerHTML = txtFirstNameJohn; 
+            document.getElementById("txtFirstNameWes").innerHTML = txtFirstNameWes; 
+        
+
+        </script>
+    </body>
+</html>
