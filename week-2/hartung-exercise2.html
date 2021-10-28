@@ -16,22 +16,20 @@
 <html lang="en">
     <head>
         <title>WEB 231 – Enterprise JavaScript I</title>
-        <link rel="stylesheet" type="text/css" href="../global.css">
     </head>
     <body>
         <h1>Exercise 2.2 - Hello JavaScript</h1>
         <button onclick="alertFunction()" id=btnMyCourse>What course am I taking?</button>
-        <script>
-        //This function activates the alert box
-        function alertFunction() {
-          alert("WEB 231 - Enterprise JavaScript I")
-        }
-        </script>
         <p id="txtMyWorld">Example text</p>
-        <script>
-        //This script replaces the example text in the p tag
-          document.getElementById("txtMyWorld").innerHTML = 'You are now in Hartung\'s world!';
-        </script>
         <a href="../index.html" class="return-home">Return</a>
+    <script>
+      //This function activates the alert box
+      function alertFunction() {
+        alert("WEB 231 - Enterprise JavaScript I")
+        }  
+
+      //This script replaces the example text in the p tag
+      document.getElementById("txtMyWorld").innerHTML = 'You are now in Hartung\'s world!';
+    </script>
     </body>
 </html>
