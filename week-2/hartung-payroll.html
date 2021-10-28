@@ -20,52 +20,67 @@
         <h1 id="payroll-header">Payroll System</h1>
         <h3>Employee record 1</h3>
         <ul>
-            <li id="txtFirstNameJohn">Example</li>
-            <li id="txtLastNameCarpenter">Carpenter</li>
-            <li id="txtAddressCarpenter">456 Shady Lane</li>
-            <li id="txtHireDateCarpenter">10/25/1978</li>
-            <li id="txtPayRateCarpenter">47.0</li>
+            <li id="txtFirstNameJohn"></li>
+            <li id="txtLastNameCarpenter"></li>
+            <li id="txtAddressCarpenter"></li>
+            <li id="txtHireDateCarpenter"></li>
+            <li id="txtPayRateCarpenter"></li>
         </ul>
         <h3>Employee record 2</h3>
         <ul>
-            <li id="txtFirstNameWes">Test</li>
-            <li id="txtLastNameCraven">Craven</li>
-            <li id="txtAddressCraven">456 Elm Street</li>
-            <li id="txtHireDateCraven">11/16/1984</li>
-            <li id="txtPayRateCraven">57.0</li>
+            <li id="txtFirstNameWes"></li>
+            <li id="txtLastNameCraven"></li>
+            <li id="txtAddressCraven"></li>
+            <li id="txtHireDateCraven"></li>
+            <li id="txtPayRateCraven"></li>
         </ul>
         <h3>Employee record 3</h3>
         <ul>
-            <li id="txtFirstNameTobe">Tobe</li>
-            <li id="txtLastNameHooper">Hooper</li>
-            <li id="txtAddressHooper">456 Texas Drive</li>
-            <li id="txtHireDateHooper">10/1/1974</li>
-            <li id="txtPayRateHooper">30.9</li>
+            <li id="txtFirstNameTobe"></li>
+            <li id="txtLastNameHooper"></li>
+            <li id="txtAddressHooper"></li>
+            <li id="txtHireDateHooper"></li>
+            <li id="txtPayRateHooper"></li>
         </ul>
-        <script type="text/JavaScript">
-            // This script declares the variables
-            const txtFirstNameJohn = "John";
-            const txtFirstNameWes = "Wes";
-            const txtFirstNameTobe = "Tobe";
-            const txtLastNameCarpenter = "Carpenter";
-            const txtLastNameCraven = "Craven";
-            const txtLastNameHooper = "Hooper";
-            const txtAddressCarpenter = "456 Shady Lane";
-            const txtAddressCraven = "456 Elm Street";
-            const txtAddressHooper = "456 Texas Drive";
-            let txtHireDateCarpenter = "10/25/1978";
-            let txtHireDateCraven = "11/16/1984";
-            let txtHireDateHooper = "10/1/1974";
-            let txtPayRateCarpenter = "47.2798".toFixed(1);
-            let txtPayRateCraven = "57.7823".toFixed(1);
-            let txtPayRateHooper = "30.9121".toFixed(1);
-            // This script formats the hire date as a Date Object
-            new Date(txtHireDateCarpenter).toLocaleDateString("en-US");
-            new Date(txtHireDateCraven).toLocaleDateString("en-US");
-            new Date(txtHireDateHooper).toLocaleDateString("en-US");
+        <a href="../index.html" id="return-home">Return</a>
+        <script>
+            // This section declares the variables
+            let txtFirstNameJohn = "John";
+            let txtFirstNameWes = "Wes";
+            let txtFirstNameTobe = "Tobe";
+            let txtLastNameCarpenter = "Carpenter";
+            let txtLastNameCraven = "Craven";
+            let txtLastNameHooper = "Hooper";
+            let txtAddressCarpenter = "456 Shady Lane";
+            let txtAddressCraven = "456 Elm Street";
+            let txtAddressHooper = "456 Texas Drive";
+
+            // the hire date variables are formatted as date objects utilizing the local en-US formatting
+            let txtHireDateCarpenter = new Date("10.25.1978").toLocaleDateString("en-US");
+            let txtHireDateCraven = new Date("11.16.1984").toLocaleDateString("en-US");
+            let txtHireDateHooper = new Date("10.1.1974").toLocaleDateString("en-US");
+
+            // the Pay Rate variables are formatted with one decimal point utilizing parseFloat and toFixed
+            let txtPayRateCarpenter = parseFloat("47.2798").toFixed(1);
+            let txtPayRateCraven = parseFloat("57.7823").toFixed(1);
+            let txtPayRateHooper = parseFloat("30.9121").toFixed(1);      
+            
             // This script writes the data to the HTML
             document.getElementById("txtFirstNameJohn").innerHTML = txtFirstNameJohn; 
             document.getElementById("txtFirstNameWes").innerHTML = txtFirstNameWes; 
+            document.getElementById("txtFirstNameTobe").innerHTML = txtFirstNameTobe;
+            document.getElementById("txtLastNameCarpenter").innerHTML = txtLastNameCarpenter;
+            document.getElementById("txtLastNameCraven").innerHTML = txtLastNameCraven;
+            document.getElementById("txtLastNameHooper").innerHTML = txtLastNameHooper;
+            document.getElementById("txtAddressCarpenter").innerHTML = txtAddressCarpenter;
+            document.getElementById("txtAddressCraven").innerHTML = txtAddressCraven;
+            document.getElementById("txtAddressHooper").innerHTML = txtAddressHooper;
+            document.getElementById("txtHireDateCarpenter").innerHTML = txtHireDateCarpenter;
+            document.getElementById("txtHireDateCraven").innerHTML = txtHireDateCraven;
+            document.getElementById("txtHireDateHooper").innerHTML = txtHireDateHooper;
+            document.getElementById("txtPayRateCarpenter").innerHTML = txtPayRateCarpenter;
+            document.getElementById("txtPayRateCraven").innerHTML = txtPayRateCraven;
+            document.getElementById("txtPayRateHooper").innerHTML = txtPayRateHooper;
         </script>     
     </body>
 </html>
