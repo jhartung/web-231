@@ -1,0 +1,77 @@
+<!--
+============================================
+; Title: Assignment 4.2
+; Author: Professor Krasso
+; Date: 9 November 2021
+; Modified By: Joel Hartung
+; Description: Number Game
+; Code Attribution: W3schools.com JavaScript if else and else if
+; URL: https://www.w3schools.com/js/js_if_else.asp
+; Code Attribution: Random number code was from the assignments requirements document
+; Code Attribution: Other code was from the courses JavaScript requirements document
+;===========================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <link rel="stylesheet" type="text/css" href="hartung-number-game.css" />
+    <link rel="stylesheet" type="text/css" href="../global.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="container">
+      <h1 class="app-header">Welcome to the Number's Game!</h1>
+
+  <!--This card contains the form where the user inputs their number guess value -->
+      <div id="card-container">
+        <div class="card">
+          <div class="card-title">Pick a Number Between 1 and 10</div>
+          <div class="card-content">
+            <div class="form">
+              <div class="form-field">
+                <label for="txtMyNumber">Guess the number:</label>
+                <input type="text" id="txtMyNumber" name="txtMyNumber" class="input" />            
+              </div>
+
+              <div class="form-field">
+                <button type="submit" class="btn btn-primary full-width" id="btnSubmit" onclick="function numberGame()">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+<!-- This section of the website displays the number game results -->
+        <div id="card-container">
+            <div class="card">
+                <div class="card-title">Results</div>
+                <div class="card-content">
+                    <div id="results-output">
+                    <!-- the results go here -->
+                    </div>                
+                </div>
+            </div>
+            <a href="../index.html" class="return-home">Return</a>
+        </div>
+
+    <script>
+      const rnd = Math.floor((Math.random() * 10) + 1); // generates a random number between 1 and 10
+      // the following function is activated on a btnSubmit click. It compares the user input number to the random number and outputs the results
+      document.getElementById("btnSubmit").onclick = function numberGame() {
+        let myNumber = document.getElementById("txtMyNumber").value;
+        // the alert code was used for testing purposes only
+        // alert("rnd is " + rnd); 
+        if (myNumber < rnd) {
+          document.getElementById("results-output").innerHTML = "The number is greater than " + myNumber;
+        } else if (myNumber > rnd) {
+          document.getElementById("results-output").innerHTML = "The number is less than " + myNumber;
+        } else {
+          document.getElementById("results-output").innerHTML = "Congratulations! You picked the correct number!";
+        }
+      }
+    </script>
+  </body>
+</html>
