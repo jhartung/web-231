@@ -1,0 +1,113 @@
+<!--
+============================================
+; Title: Assignment 5.2
+; Author: Professor Krasso
+; Date: 16 November 2021
+; Modified By: Joel Hartung
+; Description: Sequence Game
+; Code Attribution: HTML <Select> Tag
+; URL: https://www.w3schools.com/tags/tag_select.asp
+; Code Attribution: JavaScript While Loop
+; URL: https://www.w3schools.com/js/js_loop_while.asp
+; Code Attribution: JavaScript for Statement
+; URL: https://www.w3schools.com/jsref/jsref_for.asp
+; Code Attribution: JavaScript do/while Statement
+; URL: https://www.w3schools.com/jsref/jsref_dowhile.asp
+; Code Attribution: Fibonacci Sequence Code was assisted by the wEB 231 Assignment 5 document
+; Code Attribution: Other code was from the courses HTML, CSS, and JavaScript Requirements Document
+;===========================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <link rel="stylesheet" type="text/css" href="hartung-sequence-game.css" />
+    <link rel="stylesheet" type="text/css" href="../global.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="container">
+      <h1 class="app-header">Welcome to the Sequence Game!</h1>
+
+  <!--This card contains the form where the user inputs their number guess value -->
+      <div id="card-container">
+        <div class="card">
+          <div class="card-title">Sequence Selection Form</div>
+          <div class="card-content">
+            <div class="form">
+              <div class="form-field">
+                <label for="sequence">Choose a number sequence:</label>
+                <select id="sequence" name ="sequence" class="drop-down-menu">
+                  <option value="select">--Select--</option>
+                  <option value="fibonacci">Fibonacci Sequence</option>
+                  <option value="even">Even Numbers</option>
+                  <option value="odd">Odd Numbers</option>
+                </select>           
+              </div>
+
+              <div class="form-field">
+                <button type="submit" class="btn btn-primary full-width" id="btnDisplaySequence" onclick="function displaySequence()">
+                  Display Sequence
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+<!-- This section of the website displays the sequence results -->
+        <div id="card-container">
+            <div class="card">
+                <div class="card-title">Sequence Results</div>
+                <div class="card-content">
+                    <div id="results-output">
+                    <!-- the results go here -->
+                    </div>                
+                </div>
+            </div>
+            <a href="../index.html" class="return-home">Return</a>
+        </div>
+
+    <script>
+      // The displaySequence function displays the chosen sequence
+      document.getElementById("btnDisplaySequence").onclick = function displaySequence() {
+        let choice = document.getElementById("sequence").value;
+        console.log(choice); // Console.log code was used for testing purposes
+        // When fibonacci is selected, the following code uses a while loop to create a fibonacci sequence
+        if (choice === "fibonacci") {
+          let num1 = 0, num2 = 1, next;
+          let fibonacciSequenceText = 0;
+          while (num1 < 40) {
+            fibonacciSequenceText = fibonacciSequenceText + num1 + ", ";
+            next = num1 + num2;
+            num1 = num2;
+            num2 = next;
+            console.log("The Fibonacci Sequence is " + fibonacciSequenceText); // Used for testing purposes
+          }
+          document.getElementById("results-output").innerHTML = fibonacciSequenceText.slice(0,-2);                 
+        // When even is selected, the following code uses a do loop to create an even number sequence 
+        } else if (choice === "even") { 
+          let num = 0;
+          let evenSequenceText = 0;
+          do {
+            num = num + 2;
+            evenSequenceText = evenSequenceText + num + ", ";
+            console.log("The Even Sequence is " + evenSequenceText); // Used for testing purposes
+          } while (num < 18)
+          document.getElementById("results-output").innerHTML = evenSequenceText.slice(0,-2);
+        // When odd is selected, the following code uses a for loop to create an odd number sequence       
+        } else if (choice === "odd") { 
+          oddSequenceText = 0;
+          for (let num=1; num < 20; num = num+2) {
+            oddSequenceText = oddSequenceText + num + ", ";
+            console.log("The Odd Sequence is " + oddSequenceText); // Used for testing purposes
+          }
+          document.getElementById("results-output").innerHTML = oddSequenceText.slice(0,-2);
+        // The following code alerts the user to an invalid selection
+        } else if (choice === "select") { 
+          alert("Invalid selection, please try again!");
+        }   
+      }
+    </script>
+  </body>
+</html>

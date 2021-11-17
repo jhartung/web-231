@@ -1,0 +1,42 @@
+/*
+============================================
+; Title: Assignment 5.2
+; Author: Professor Krasso
+; Date: 16 November 2021
+; Modified By: Joel Hartung
+; Description: CSS for Sequence Game Assignment
+;===========================================
+*/
+
+/* CSS for body styling */
+body {
+    font-family: "Oswald", Verdana, Arial, sans-serif;
+}
+
+/* CSS to center the header text */
+.app-header {
+    text-align: center;
+}
+
+/* CSS to pad the container div */
+#container {
+    padding: 10px;
+}
+
+/* CSS to style the card-container div */
+#card-container {
+    width: 600px;
+    margin: 3% auto 0;
+}
+
+/* CSS to style the form div */
+#form {
+    width: 600px;
+    margin: 3% auto 0;
+}
+
+/* CSS to style the results-output div */
+#results-output {
+    text-align: center;
+    font-size: 28px;
+}
