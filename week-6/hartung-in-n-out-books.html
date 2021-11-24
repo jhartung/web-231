@@ -1,0 +1,181 @@
+<!--
+============================================
+; Title: Assignment 6.2
+; Author: Professor Krasso
+; Date: 23 November 2021
+; Modified By: Joel Hartung
+; Description: In-N-Out-Books
+; Code Attribution: How TO - Toggle Hide and Show
+; URL: https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
+; Code Attribution: JavaScript Objects
+; URL: https://www.w3schools.com/js/js_objects.asp
+; Code Attribution: Additional code from the Assignment 6 document
+; Code Attribution: Additional code from HTML, CSS, and JavaScript requirements document
+;===========================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <link rel="stylesheet" type="text/css" href="hartung-in-n-out-books.css" />
+    <link rel="stylesheet" type="text/css" href="../global.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="app-header">Welcome to In-N-Out-Books!</h1>
+  <!--This card contains the form where the user inputs their number guess value -->
+      <div class="card-container">
+        <div class="card">
+          <div class="card-title">My Favorites</div>
+          <div class="card-content">
+            <div class="form">
+              <div class="form-field">
+                <label for="favoriteList">Choose a listing:</label>
+                <select id="favoriteList" name ="favoriteList" class="drop-down-menu">
+                  <option value="select">--Select--</option>
+                  <option value="books">Top 3 Favorite Books</option>
+                  <option value="authors">Top 3 Favorite Authors</option>
+                </select>           
+              </div>
+              <div class="form-field">
+                <button type="submit" class="btn btn-primary full-width" id="btnDisplayListing" onclick="function displayListing()">
+                  Display Listing
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <a href="../index.html" class="return-home">Return</a>
+      </div>      
+<!-- This section of the code displays the "Top 3 Favorite Books" table  -->
+        <div id="favorite-books" class="card-container">
+            <div class="card">
+                <div class="card-title">Top 3 Favorite Books</div>
+                <div class="card-content">
+                  <table>
+                    <tr>
+                      <th>&nbsp;ISBN</th>
+                      <th>&nbsp;Title</th>
+                      <th>&nbsp;Pages</th>
+                    </tr>
+                    <tr>
+                      <td id="txtBookOneISBN"></td>
+                      <td id="txtBookOneTitle"></td>
+                      <td id="txtBookOnePages"></td>
+                    </tr>
+                    <tr>
+                      <td id="txtBookTwoISBN"></td>
+                      <td id="txtBookTwoTitle"></td>
+                      <td id="txtBookTwoPages"></td>
+                    </tr>
+                    <tr>
+                      <td id="txtBookThreeISBN"></td>
+                      <td id="txtBookThreeTitle"></td>
+                      <td id="txtBookThreePages"></td>
+                    </tr>
+                  </table>           
+                </div>
+            </div>
+        </div>
+<!-- This section of the code displays the "Top 3 Favorite Authors" table  -->
+        <div id="favorite-authors" class="card-container">
+          <div class="card">
+              <div class="card-title">Top 3 Favorite Authors</div>
+              <div class="card-content">
+                <table>
+                  <tr>
+                    <th>&nbsp;Name</th>
+                    <th>&nbsp;Genre</th>
+                  </tr>
+                  <tr>
+                    <td id="txtAuthorOneName"></td>
+                    <td id="txtAuthorOneGenre"></td>
+                  </tr>
+                  <tr>
+                    <td id="txtAuthorTwoName"></td>
+                    <td id="txtAuthorTwoGenre"></td>
+                  </tr>
+                  <tr>
+                    <td id="txtAuthorThreeName"></td>
+                    <td id="txtAuthorThreeGenre"></td>
+                  </tr>
+                </table>             
+              </div>
+          </div>
+      </div>
+    </div>
+    <script>
+      // This code declares the books and authors variables
+      let books = document.getElementById("favorite-books");
+      let authors = document.getElementById("favorite-authors");
+      // this code makes the books and authors section default to hidden
+      books.style.display = "none";
+      authors.style.display = "none";
+      // this code declares the book objects
+      const bookOne = {
+        isbn: "&nbsp;1250097754" ,
+        title: "&nbsp;Futuristic Violence and Fancy Suits" , 
+        pages: "&nbsp;384" 
+      };
+      const bookTwo = {
+        isbn: "&nbsp;0670813648" ,
+        title: "&nbsp;Misery" , 
+        pages: "&nbsp;320" 
+      };
+      const bookThree = {
+        isbn: "&nbsp;0060853964" ,
+        title: "&nbsp;Good Omens" , 
+        pages: "&nbsp;400" 
+      };
+      // this code declares the author objects
+      const authorOne = {
+        name: "&nbsp;Stephen King" ,
+        genre: "&nbsp;Horror" 
+      };
+      const authorTwo = {
+        name: "&nbsp;Jason Pargin" ,
+        genre: "&nbsp;Horror, science fiction, comedy" 
+      };
+      const authorThree = {
+        name: "&nbsp;Neil Gaiman" ,
+        genre: "&nbsp;Fantasy" 
+      };
+      // this code displays the object data in the appropriate table
+      document.getElementById("txtBookOneISBN").innerHTML = bookOne.isbn;
+      document.getElementById("txtBookTwoISBN").innerHTML = bookTwo.isbn;
+      document.getElementById("txtBookThreeISBN").innerHTML = bookThree.isbn;
+      document.getElementById("txtBookOneTitle").innerHTML = bookOne.title;
+      document.getElementById("txtBookTwoTitle").innerHTML = bookTwo.title;
+      document.getElementById("txtBookThreeTitle").innerHTML = bookThree.title;
+      document.getElementById("txtBookOnePages").innerHTML = bookOne.pages;
+      document.getElementById("txtBookTwoPages").innerHTML = bookTwo.pages;
+      document.getElementById("txtBookThreePages").innerHTML = bookThree.pages;
+      document.getElementById("txtAuthorOneName").innerHTML = authorOne.name;
+      document.getElementById("txtAuthorTwoName").innerHTML = authorTwo.name; 
+      document.getElementById("txtAuthorThreeName").innerHTML = authorThree.name; 
+      document.getElementById("txtAuthorOneGenre").innerHTML = authorOne.genre;
+      document.getElementById("txtAuthorTwoGenre").innerHTML = authorTwo.genre; 
+      document.getElementById("txtAuthorThreeGenre").innerHTML = authorThree.genre; 
+      // This code displays the appropriate table depending on the users selection
+      document.getElementById("btnDisplayListing").onclick = function displayListing() {
+        let choice = document.getElementById("favoriteList").value;
+        console.log(choice); // Console.log code was used for testing purposes
+        if (choice === "books") {
+          books.style.display = "block";
+          authors.style.display = "none";
+        }
+        else if (choice === "authors") {
+          books.style.display = "none";
+          authors.style.display = "block";
+        }
+        else if (choice === "select") {
+          books.style.display = "none";
+          authors.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
