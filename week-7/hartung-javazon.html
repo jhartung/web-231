@@ -300,30 +300,29 @@
       // This code displays the appropriate table depending on the users selection
       document.getElementById("btnDisplayListing").onclick = function displayListing() {
         let choice = document.getElementById("listingChoice").value;
-        console.log(choice); // Console.log code was used for testing purposes
-        if (choice === "products") {
-          productsSelect.style.display = "block";
-          servicesSelect.style.display = "none";
-          employeesSelect.style.display = "none";
+        // This code utilizes the switch function to display the appropriate table
+          switch(choice) {
+            case "products":
+              productsSelect.style.display = "block";
+              servicesSelect.style.display = "none";
+              employeesSelect.style.display = "none";
+            break;
+            case "services": 
+              productsSelect.style.display = "none";
+              servicesSelect.style.display = "block";
+              employeesSelect.style.display = "none";
+            break;
+            case "employees":
+              productsSelect.style.display = "none";
+              servicesSelect.style.display = "none";
+              employeesSelect.style.display = "block";
+            break;
+            default:
+              products.style.display = "none";
+              services.style.display = "none";
+              employees.style.display = "none";
+          }
         }
-        else if (choice === "services") {
-          productsSelect.style.display = "none";
-          servicesSelect.style.display = "block";
-          employeesSelect.style.display = "none";
-        }
-        else if (choice === "employees") {
-          productsSelect.style.display = "none";
-          servicesSelect.style.display = "none";
-          employeesSelect.style.display = "block";
-        }
-        else if (choice === "select") {
-          productsSelect.style.display = "none";
-          servicesSelect.style.display = "none";
-          employeesSelect.style.display = "none";
-        }
-      }
- 
-
     </script>
   </body>
 </html>
