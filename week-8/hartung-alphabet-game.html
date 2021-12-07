@@ -1,0 +1,103 @@
+<!--
+============================================
+; Title: Assignment 8.2
+; Author: Professor Krasso
+; Date: 12 December 2021
+; Modified By: Joel Hartung
+; Description: Alphabet Game
+; Code Attribution: For...in statements
+; URL: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
+; Code Attribution: JavaScript Arrays
+; URL: https://www.w3schools.com/js/js_arrays.asp
+; Code Attribution: If...else
+; URL: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else
+; Code Attribution: Additional code from the Assignment 8 document
+; Code Attribution: Additional code from HTML, CSS, and JavaScript requirements document
+;===========================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <link rel="stylesheet" type="text/css" href="hartung-alphabet-game.css" />
+    <link rel="stylesheet" type="text/css" href="../global.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="app-header">Welcome to the Alphabet Game!</h1>
+  <!-- Alphabet Number Form Div -->
+      <div class="card-container">
+        <div class="card">
+          <div class="card-title">Alphabet Number Form</div>
+          <div class="card-content">
+            <div class="form">
+              <div class="form-field">
+                <label for="txtPosition">Alphabet Letter Position</label>
+                <input type="text" id="txtPosition" name ="txtPosition" class="input" />         
+              </div>
+              <div class="form-field">
+                <button type="submit" class="btn btn-primary full-width" id="btnFindLetter" onclick="function findLetter()">
+                  Find Letter
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <a href="../index.html" class="return-home">Return</a>
+      </div>
+<!-- Alphabet Div -->
+      <div class="card-container">
+        <div class="card">
+          <div class="card-title">Letters in the Alphabet</div>
+            <div class="card-content" id="letters-output">
+            <!-- the results go here -->
+            </div>                
+          </div>
+       </div>
+<!-- Results Div -->
+      <div class="card-container">
+        <div class="card">
+          <div class="card-title">Results</div>
+            <div class="card-content" id="results-output">
+            <!-- the results go here -->
+            </div>                
+          </div>
+       </div>
+    <script>
+      // creates the alphabet array
+      const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+      console.log(alphabet); // Used for testing purposes
+      let alphabetOutput = ""; // Defines alphabetOutput variable and assigns an empty string value
+      // for... in loop to build alphabetOutput string
+      for (const x in alphabet) {
+        alphabetOutput = alphabetOutput + alphabet[x] + ", ";
+      }
+      
+      console.log(alphabetOutput); // used for testing purposes
+
+      // Outputs the alphabetOutput string to the letters-output div
+      document.getElementById("letters-output").innerHTML = alphabetOutput.slice(0, -2);
+      
+      // Initializes the findLetter function onclick 
+      document.getElementById("btnFindLetter").onclick = function findLetter() {
+        let pos = document.getElementById("txtPosition").value; // defines the pos variable
+        let posModified = pos - 1; // modifies the pos value so it accurately matches the position
+        let letter = alphabet[posModified]; // assigns the letter variable
+        console.log(pos); // used for testing
+        console.log(posModified); // used for testing
+        console.log(letter); // used for testing
+        // if else loop to bind results to results-output
+        if (letter === undefined) {
+          document.getElementById("results-output").innerHTML = "There are not " + pos + " letters in the alphabet.";
+        }
+        else {
+          document.getElementById("results-output").innerHTML = letter + " is at position " + pos + " in the alphabet."; 
+        }
+      }
+      </script>
+    </div>
+  </body>
+</html>
